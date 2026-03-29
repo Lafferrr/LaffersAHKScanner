@@ -13,13 +13,10 @@ $ahkFiles = Get-ChildItem -Path $ScanRoot -Filter "*.ahk" -Recurse -File -Force 
 $count = ($ahkFiles | Measure-Object).Count
 
 if ($count -eq 0) {
-    Write-Host "No .ahk files found on this machine." -ForegroundColor Red
+    Write-Host "No .ahk files found." -ForegroundColor Red
     Read-Host "Press Enter to close this window"
     exit
 }
-
-Write-Host "Found $count .ahk file(s). Building report..." -ForegroundColor Green
-Write-Host ""
 
 $lines = @()
 $lines += "=========================================="
